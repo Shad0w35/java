@@ -1,19 +1,24 @@
-import java.util.*;
-class SlipA
-{
-	public static void main(String args[]) 
-	{
-		TreeSet<Integer>t =new TreeSet<Integer>();
-		Scanner sc= new Scanner(System.in);
-		System.out.println("Enter the value of n");
-		int n = sc.nextInt();
-		System.out.println("Enter numbers");
-		for(int i=0;i<n;i++)
-		{	
-			t.add(sc.nextInt());
-		}
-		System.out.println("elements in sorted order are");
-		System.out.println(t);
-		
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class SortedIntegers {
+    public static void main(String[] args) {
+        TreeSet<Integer> sortedSet = new TreeSet<>();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the value of N: ");
+        int N = scanner.nextInt();
+
+        System.out.println("Enter " + N + " integers:");
+
+        for (int i = 0; i < N; i++) {
+            int num = scanner.nextInt();
+            sortedSet.add(num);
+        }
+
+        System.out.println("Sorted integers (without duplicates):");
+        for (int num : sortedSet) {
+            System.out.println(num);
+        }
     }
 }
