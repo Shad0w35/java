@@ -58,8 +58,8 @@ public class EmployeeDetails extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btn1) {
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employees", "root", "");
+                Class.forName("org.postgresql.Driver");
+                Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/employees", "root", "");
                 PreparedStatement stmt = con.prepareStatement("INSERT INTO employee_details(eno, ename, designation, salary) VALUES(?, ?, ?, ?)");
                 stmt.setString(1, tf1.getText());
                 stmt.setString(2, tf2.getText());
